@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>excel2wiki</title>
+    <link rel="stylesheet" href="style.css" title="" type="text/css" />
+    <style type="text/css" media="all">
+    body {
+        font-family:Arial,sans-serif;
+        font-size:12px;
+        padding:20px;
+    }
+    </style>
+</head>
+<body>
+    <h1>Directions</h1>
+    <p>
+    <ol>
+        <li>Copy cells with Ctrl+C from Excel</li>
+        <li>Paste into the left-hand text area element.</li>
+        <li>Click anywhere else on the page (or hit TAB) and the right-hand text area
+        element should automatically update.</li>
+    </ol>
+    </p>
+
+    <textarea id="excel-input">paste in excel data here.</textarea>
+    <textarea id="wiki-output">wiki table markup will appear here once you paste the excel data and click away.</textarea>
+    <input id="header-background-color" type="text" value="#ACF5FF" >
+    <label for="">Header background color (CSS hex value or color name)</label><br>
+
+    <input id="highlight-rows" type="text" value="" >
+    <label for="">Row indices to highlight (header row is 0). Leave blank for none. Comma separated.</label><br>
+
+    <input id="highlight-rows-color" type="text" value="yellow" >
+    <label for="">Highlight row color (CSS hex value or color name)</label><br>
+
+    <br><label for="">Cell formatting function (JavaScript)</label><br>
+    <textarea id="cell-formatting-function">function(content, line, rowIndex, content, colIndex) {
+    // Do stuff to manipulate cell content here.
+    return content;
+}</textarea>
+
+    <script src="main.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

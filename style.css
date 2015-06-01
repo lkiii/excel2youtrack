@@ -1,0 +1,19 @@
+body {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+textarea {
+    width:50%;
+    height:400px;
+    float:left;
+    padding:8px;
+    box-sizing:border-box;
+    margin-bottom:10px;
+}
+
+input {
+    display:inline-block;
+    margin-bottom:5px;
+}
