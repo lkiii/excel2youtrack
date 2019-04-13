@@ -20,10 +20,10 @@ function update (e) {
   text.split('\n').forEach(function (line, rowIndex) {
     let values = line.split('\t')
     if (rowIndex === 1) {
-      markup += '|'
       for (let i = 0; i < values.length; i++) {
-        markup += '---|'
+        markup += '|---'
       }
+      markup += '|\n'
     }
     values.forEach(function (content, colIndex) {
       markup += `|${content}`
