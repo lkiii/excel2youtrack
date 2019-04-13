@@ -1,9 +1,14 @@
 var excel = document.getElementById('excel-input')
 var wiki = document.getElementById('wiki-output')
 
-excel.addEventListener('focus', function f (e) {
+excel.addEventListener('focus', function (e) {
   // For convenience, select all text on first click.
   e.target.select()
+})
+excel.addEventListener('paste', function (e) {
+  var event = document.createEvent('HTMLEvents')
+  event.initEvent('blur', false, true)
+  excel.dispatchEvent(event)
 })
 
 excel.addEventListener('blur', update)
@@ -37,6 +42,6 @@ function update (e) {
   wiki.innerHTML = markup
 };
 
-wiki.addEventListener('click', function (e) {
+wiki.addEventListener('focus', function (e) {
   e.target.select()
 })
