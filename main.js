@@ -1,12 +1,9 @@
 var excel = document.getElementById('excel-input')
 var wiki = document.getElementById('wiki-output')
 
-excel.addEventListener('click', function f (e) {
-  // For convenience, select all text on first click. Remove listener for
-  // subsequent clicks since it gets annoying if you're trying to edit
-  // stuff.
+excel.addEventListener('focus', function f (e) {
+  // For convenience, select all text on first click.
   e.target.select()
-  excel.removeEventListener('click', f)
 })
 
 excel.addEventListener('blur', update)
