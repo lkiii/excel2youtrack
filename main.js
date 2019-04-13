@@ -11,6 +11,10 @@ excel.addEventListener('click', function f (e) {
 
 excel.addEventListener('blur', update)
 
+function isEmptyLine (values) {
+  return (values.length === 1 && values[0].length === 0)
+}
+
 function update (e) {
   console.log('Updating...')
   var text = excel.value
@@ -19,6 +23,9 @@ function update (e) {
 
   text.split('\n').forEach(function (line, rowIndex) {
     let values = line.split('\t')
+    if (isEmptyLine(values)) {
+      return
+    }
     if (rowIndex === 1) {
       for (let i = 0; i < values.length; i++) {
         markup += '|---'
