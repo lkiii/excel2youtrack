@@ -6,9 +6,7 @@ excel.addEventListener('focus', function (e) {
   e.target.select()
 })
 excel.addEventListener('paste', function (e) {
-  var event = document.createEvent('HTMLEvents')
-  event.initEvent('blur', false, true)
-  excel.dispatchEvent(event)
+  excel.blur()
 })
 
 excel.addEventListener('blur', update)
