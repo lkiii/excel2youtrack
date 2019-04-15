@@ -2,14 +2,18 @@ var excel = document.getElementById('excel-input')
 var wiki = document.getElementById('wiki-output')
 
 excel.addEventListener('focus', function (e) {
-  // For convenience, select all text on first click.
+  e.target.select()
+})
+wiki.addEventListener('focus', function (e) {
   e.target.select()
 })
 excel.addEventListener('paste', function (e) {
-  excel.blur()
+  setTimeout(() => {
+    excel.blur()
+  }, 200)
 })
 
-excel.addEventListener('blur', update)
+excel.addEventListener('blur', update, true)
 
 function isEmptyLine (values) {
   return (values.length === 1 && values[0].length === 0)
@@ -38,8 +42,4 @@ function update (e) {
     markup += '|\n'
   })
   wiki.innerHTML = markup
-};
-
-wiki.addEventListener('focus', function (e) {
-  e.target.select()
-})
+}
